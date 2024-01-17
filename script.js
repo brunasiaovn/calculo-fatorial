@@ -1,10 +1,14 @@
-function calcularFatorial() {
-	var num = document.getElementById("num").value;
-	var resultado = 1;
+function fatorial() {
+    let saida = document.getElementById('saida')
+    let n = Number(document.getElementById('fnum').value)
 
-	for (var i = 2; i <= num; i++) {
-		resultado *= i;
-	}
-
-	document.getElementById("resultado").innerHTML = "Núi Fatorial: " + resultado;
+    saida.innerHTML += `<h2>Calculando ${n}!</h2>`
+    let c = n
+    let fat = 1
+    while (c > 1) {
+        saida.innerHTML += `${c} x `
+        fat *= c // fat = fat * c
+        c --
+    }
+    saida.innerHTML += `1 = <strong>${fat.toLocaleString('pt-BR')}</strong>`
 }
